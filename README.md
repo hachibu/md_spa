@@ -1,10 +1,14 @@
-# md_spa
+<h1 align="center">
+  <img src="https://raw.githubusercontent.com/hachibu/md_spa/master/images/md_spa-icon.png" alt="md_spa">
+  <br>
+  md_spa
+</h1>
 
 md_spa is a command line tool to compile a Markdown file into a single HTML file.
 
 ## Requirements
 
-- [crystal](https://crystal-lang.org/docs/installation)
+- [Crystal](https://crystal-lang.org/docs/installation)
 
 ## Install
 
