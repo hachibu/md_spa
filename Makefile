@@ -8,6 +8,9 @@ build: clean
 	@mkdir -p bin
 	crystal build -o bin/$(name) src/$(name).cr
 
+test:
+	@crystal spec
+
 install: build
 	cp bin/$(name) /usr/local/bin
 

@@ -1,2 +1,2 @@
 require "spec"
-require "../src/md_spa"
+require "../src/md_spa/*"
