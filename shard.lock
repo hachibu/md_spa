@@ -1,0 +1,14 @@
+version: 1.0
+shards:
+  admiral:
+    github: jwaldrip/admiral.cr
+    version: 1.4.0
+
+  html_builder:
+    github: crystal-lang/html_builder
+    version: 0.2.2
+
+  markd:
+    github: icyleaf/markd
+    version: 0.1.1
+
