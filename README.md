@@ -20,9 +20,13 @@ md_spa is a command line tool to compile a Markdown file into a single HTML file
 
     md_spa examples/index.md
 
-## Development
+## Develop
 
     make build && bin/md_spa
+
+## Test
+
+    make test
 
 ## Contributing
 
@@ -36,7 +40,3 @@ md_spa is a command line tool to compile a Markdown file into a single HTML file
 
 - [hachibu](https://github.com/hachibu) - creator, maintainer
 
-## Todo
-
-- [ ] Add tests.
-- [ ] Add more complex examples.

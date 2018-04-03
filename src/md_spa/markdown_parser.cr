@@ -37,8 +37,8 @@ class MdSpa::MarkdownParser
       doctype
       html do
         head do
-          tag("style", type: "text/css") do
-            codeblocks("css").each do |cb|
+          codeblocks("css").each do |cb|
+            tag("style", type: "text/css") do
               html(cb[:code])
             end
           end
@@ -49,8 +49,8 @@ class MdSpa::MarkdownParser
             html(cb[:code])
           end
 
-          tag("script", type: "text/javascript") do
-            codeblocks("javascript").each do |cb|
+          codeblocks("javascript").each do |cb|
+            tag("script", type: "text/javascript") do
               html(cb[:code])
             end
           end

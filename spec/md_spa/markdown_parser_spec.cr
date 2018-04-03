@@ -1,16 +1,4 @@
-require "./spec_helper"
-
-def codeblock(language, code)
-  "```#{language}\n" + code + "\n```\n"
-end
-
-def create_markdown_parser
-  MdSpa::MarkdownParser.new(
-    codeblock("css", "body { background: red; }") +
-    codeblock("html", "<p>hello</p>") +
-    codeblock("js", "console.log('world');")
-  )
-end
+require "../spec_helper"
 
 describe MdSpa::MarkdownParser do
   describe "#codeblocks" do
@@ -23,7 +11,7 @@ describe MdSpa::MarkdownParser do
     it "returns codeblocks by language" do
       markdown_parser = create_markdown_parser
 
-      %w(css html js).each do |language|
+      %w(css html javascript).each do |language|
         markdown_parser.codeblocks(language: language).size.should eq(1)
       end
     end
@@ -34,7 +22,7 @@ describe MdSpa::MarkdownParser do
       markdown_parser = create_markdown_parser
 
       markdown_parser.to_html.should eq(
-        "<!DOCTYPE html><html><head><style type=\"text/css\">body { background: red; }</style></head><body><p>hello</p><script type=\"text/javascript\"></script></body></html>"
+        "<!DOCTYPE html><html><head><style type=\"text/css\">body { background: red; }</style></head><body><p>hello</p><script type=\"text/javascript\">console.log('world');</script></body></html>"
       )
     end
   end
