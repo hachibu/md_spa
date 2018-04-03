@@ -2,10 +2,7 @@ require "html_builder"
 require "markd"
 
 class MdSpa::MarkdownParser
-  alias CodeBlock = {
-    language: String,
-    code: String
-  }
+  alias CodeBlock = {language: String, code: String}
 
   @document : Markd::Node
 
@@ -24,7 +21,7 @@ class MdSpa::MarkdownParser
     end
   end
 
-  def codeblocks(language : String? = nil)
+  def codeblocks(language : String? = nil) : Array(CodeBlock)
     if language.nil?
       @codeblocks
     else
@@ -32,7 +29,7 @@ class MdSpa::MarkdownParser
     end
   end
 
-  def to_html
+  def to_html : String
     HTML.build do
       doctype
       html do
@@ -59,7 +56,7 @@ class MdSpa::MarkdownParser
     end
   end
 
-  def each_node
+  def each_node : Nil
     walker = @document.walker
     while event = walker.next
       node, _ = event
