@@ -8,6 +8,8 @@ md_spa is a command line tool to compile a Markdown file into a single HTML file
 
 ## Install
 
+    git clone https://github.com/hachibu/md_spa.git
+    cd md_spa
     make install
 
 ## Uninstall

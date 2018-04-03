@@ -9,7 +9,7 @@ build: clean
 	crystal build -o bin/$(name) src/$(name).cr
 
 install: build
-	@cp bin/$(name) /usr/local/bin
+	cp bin/$(name) /usr/local/bin
 
 uninstall:
-	@rm -f /usr/local/bin/$(name)
+	rm -f /usr/local/bin/$(name)
