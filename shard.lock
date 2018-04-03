@@ -12,3 +12,7 @@ shards:
     github: icyleaf/markd
     version: 0.1.1
 
+  watcher:
+    github: faustinoaq/watcher
+    version: 0.2.3
+

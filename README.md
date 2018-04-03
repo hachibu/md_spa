@@ -16,13 +16,18 @@ md_spa is a command line tool to compile a Markdown file into a single HTML file
     cd md_spa
     make install
 
-## Uninstall
-
-    make uninstall
-
 ## Usage
 
     md_spa examples/index.md
+    open examples/index.html
+
+### Live Edit Mode
+
+    md_spa --watch examples/index.md
+
+## Uninstall
+
+    make uninstall
 
 ## Develop
 

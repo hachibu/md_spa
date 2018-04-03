@@ -1,4 +1,5 @@
 require "admiral"
+require "watcher"
 
 class MdSpa::CLI < Admiral::Command
   define_version(
@@ -16,14 +17,35 @@ class MdSpa::CLI < Admiral::Command
   )
   define_flag(
     output : String,
+    description: "Path to HTML file.",
     short: o
+  )
+  define_flag(
+    watch : Bool,
+    default: false,
+    description: "Watch Markdown file for changes.",
+    short: w
   )
 
   def run : Nil
     input = parse_input_argument!
     output = parse_output_flag!(input)
-    markdown = MdSpa::MarkdownParser.new(File.read(input))
 
+    compile(input, output)
+
+    return unless flags.watch
+
+    puts "Watching #{input} for changes"
+    watch input do |event|
+      event.on_change do
+        puts "Recompiling #{input}"
+        compile(input, output)
+      end
+    end
+  end
+
+  def compile(input, output)
+    markdown = MdSpa::MarkdownParser.new(File.read(input))
     File.write(output, markdown.to_html)
   end
 
