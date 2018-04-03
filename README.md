@@ -2,9 +2,17 @@
 
 md_spa is a command line tool to compile a Markdown file into a single HTML file.
 
+## Requirements
+
+- [crystal](https://crystal-lang.org/docs/installation)
+
 ## Install
 
     make install
+
+## Uninstall
+
+    make uninstall
 
 ## Usage
 
@@ -13,10 +21,6 @@ md_spa is a command line tool to compile a Markdown file into a single HTML file
 ## Development
 
     make build && bin/md_spa
-
-## Uninstall
-
-    make uninstall
 
 ## Contributing
 
