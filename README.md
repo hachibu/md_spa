@@ -4,7 +4,7 @@
   md_spa
 </h1>
 
-Have you ever wanted to build a single-page application inside of one giant Markdown file? Well, now you with the help of `md_spa`!
+Have you ever wanted to build a single-page application inside of one giant Markdown file? Well, now you can with the help of `md_spa`!
 
 With `md_spa` you can build an entire single-page application inside of a Markdown file and compile it down to a single HTML file or a standalone executable web server.
 
