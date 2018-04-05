@@ -40,14 +40,12 @@ class MdSpa::MarkdownParser
             end
           end
         end
-
         body do
           codeblocks("html").each do |cb|
             html(cb[:code])
           end
-
           codeblocks("javascript").each do |cb|
-            tag("script", type: "text/javascript") do
+            script(type: "text/javascript") do
               html(cb[:code])
             end
           end

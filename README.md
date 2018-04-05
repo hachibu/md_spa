@@ -1,12 +1,12 @@
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/hachibu/md_spa/master/images/md_spa-icon.png">
+  <img src="https://raw.githubusercontent.com/hachibu/md_spa/master/images/md_spa-logo.png">
   <br>
   md_spa
 </h1>
 
-Have you ever wanted to build a single-page application inside of one giant Markdown file? Well, now you can! 
+Have you ever wanted to build a single-page application inside of one giant Markdown file? Well, now you with the help of `md_spa`!
 
-md_spa is a command line tool to compile a Markdown file into a single HTML file.
+With `md_spa` you can build an entire single-page application inside of a Markdown file and compile it down to a single HTML file or a standalone executable web server.
 
 ## Requirements
 
@@ -18,20 +18,23 @@ md_spa is a command line tool to compile a Markdown file into a single HTML file
     cd md_spa
     make install
 
-## Usage
-
-    md_spa examples/index.md
-    open examples/index.html
-
-### Live Edit Mode
-
-<img src="https://raw.githubusercontent.com/hachibu/md_spa/master/images/watch-mode.png">
-
-    md_spa --watch examples/index.md
-
 ## Uninstall
 
     make uninstall
+
+## Usage
+
+### Compile to HTML
+
+    md_spa examples/index.md --build=html
+
+### Compile to Standalone Executable
+
+    md_spa examples/index.md --build=exe
+
+### Live Edit Mode
+
+    md_spa examples/index.md --serve
 
 ## Develop
 

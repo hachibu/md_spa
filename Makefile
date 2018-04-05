@@ -1,18 +1,22 @@
-name=md_spa
+NAME = md_spa
+BUILD_FLAGS = -s -p --error-trace
 
 clean:
 	@rm -rf bin
 
-build: clean
+setup:
 	@shards check || shards install
 	@mkdir -p bin
-	crystal build -o bin/$(name) src/$(name).cr
+
+build: clean setup
+	@crystal build src/$(NAME).cr -o bin/$(NAME) $(BUILD_FLAGS)
+	@echo
 
 test:
 	@crystal spec
 
 install: build
-	cp bin/$(name) /usr/local/bin
+	cp bin/$(NAME) /usr/local/bin
 
 uninstall:
-	rm -f /usr/local/bin/$(name)
+	rm -f /usr/local/bin/$(NAME)

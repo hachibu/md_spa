@@ -1,0 +1,16 @@
+require "colorize"
+require "http/server"
+
+port = 8080
+
+server = HTTP::Server.new(port) do |context|
+  context.response.content_type = "text/html"
+  <%- if @mode == :dynamic -%>
+  context.response.print(File.read("<%= @html_file %>"))
+  <%- else -%>
+  context.response.print(%(<%= @html %>))
+  <%- end -%>
+end
+
+puts("Listening on #{"http://localhost:#{port}".colorize.green}.")
+server.listen
