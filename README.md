@@ -40,7 +40,7 @@ With `md_spa` you can build an entire single-page application inside of a Markdo
 
     md_spa examples/index.md --serve
 
-## Develop
+## Development
 
     make build && bin/md_spa
 
