@@ -24,6 +24,8 @@ With `md_spa` you can build an entire single-page application inside of a Markdo
 
 ## Usage
 
+<img src="https://raw.githubusercontent.com/hachibu/md_spa/master/images/serve-mode-screenshot.png">
+
 ### Compile to HTML
 
     md_spa examples/index.md --build=html
