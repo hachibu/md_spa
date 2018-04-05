@@ -59,4 +59,4 @@ With `md_spa` you can build an entire single-page application inside of a Markdo
 ## Contributors
 
 - [hachibu](https://github.com/hachibu) - creator, maintainer
-
+- [mgeraci](https://github.com/mgeraci)
