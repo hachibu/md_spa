@@ -1,7 +1,17 @@
 require "colorize"
 require "http/server"
+require "option_parser"
 
 port = 8080
+
+OptionParser.parse! do |parser|
+  parser.on("-h", "--help", "Show help.") do
+    puts parser
+  end
+  parser.on("-p PORT", "--port=PORT", "Specify port to listen on.") do |p|
+    port = p.to_i
+  end
+end
 
 server = HTTP::Server.new(port) do |context|
   context.response.content_type = "text/html"
@@ -13,4 +23,5 @@ server = HTTP::Server.new(port) do |context|
 end
 
 puts("Listening on #{"http://localhost:#{port}".colorize.green}.")
+
 server.listen

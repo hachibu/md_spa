@@ -29,10 +29,12 @@ With `md_spa` you can build an entire single-page application inside of a Markdo
 ### Compile to HTML
 
     md_spa examples/index.md --build=html
+    open examples/index.html
 
 ### Compile to Standalone Executable
 
     md_spa examples/index.md --build=exe
+    examples/index.exe --port=4567
 
 ### Live Edit Mode
 
